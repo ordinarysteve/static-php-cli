@@ -39,9 +39,6 @@ on:
       build-micro:
         description: Build phpmicro binary
         type: boolean
-      build-fpm:
-        description: Build fpm binary
-        type: boolean
       enable-zts:
         description: Build with Zend Thread Safety (ZTS) enabled
         type: boolean
@@ -82,9 +79,6 @@ on:
         type: boolean
       build-micro:
         description: Build phpmicro binary
-        type: boolean
-      build-fpm:
-        description: Build fpm binary
         type: boolean
       enable-zts:
         description: Build with Zend Thread Safety (ZTS) enabled
@@ -170,9 +164,6 @@ jobs:
           fi
           if [ ${{ inputs.build-micro }} == true ]; then
               BUILD_CMD="$BUILD_CMD --build-micro"
-          fi
-          if [ ${{ inputs.build-fpm }} == true ]; then
-              BUILD_CMD="$BUILD_CMD --build-fpm"
           fi
           if [ ${{ inputs.enable-zts }} == true ]; then
           BUILD_CMD="$BUILD_CMD --enable-zts"
